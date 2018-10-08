@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "CheckingData";
+}
+
+<h2>Check-In Data</h2>
+  @if (TempData["sucess"] != null)
+    {
+<div class="col-lg-6" style="color:red">@TempData["sucess"].ToString() </div>
+    }
+
+@if (TempData["MessageSent"] != null)
+{
+    <div class="col-lg-6" style="color:red">@TempData["MessageSent"].ToString() </div>
+}
+
+
+@using (Html.BeginForm("CheckingData", "Home", FormMethod.Post, new { @id = "" }))
+{
+  
+    <div class="form-group">
+
+
+        <div class="col-lg-3">
+            <button type="submit" class="btn btn-default waves-effect waves-light btn-sm">
+                Fetch Reports
+            </button>
+        </div>
+
+    </div>
+}
